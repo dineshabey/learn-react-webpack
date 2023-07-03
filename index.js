@@ -1,5 +1,3 @@
-let toggleButton = document.querySelector('#myButton');
-let descriptionP = document.querySelector('#myPara');
 
 toggleButton.onclick = changeVisibility;
 let isVisibale = false;
