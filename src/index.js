@@ -1,3 +1,5 @@
+import { toggleButton, descriptionP } from './dom-loder';
+
 
 toggleButton.onclick = changeVisibility;
 let isVisibale = false;
