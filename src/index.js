@@ -36,3 +36,9 @@ function changeButtontext() {
 }
 
 let myP = <p>This is pargraphe</p>;
+
+const appDiv = document.querySelector('#app');
+const root = ReactDOM.createRoot(appDiv);
+root.render(myP);
+
+console.log('Hi there');
