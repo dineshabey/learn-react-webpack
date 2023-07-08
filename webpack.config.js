@@ -1,5 +1,14 @@
 module.exports = {
-    mode: 'production',
+    mode: 'production',  //development
+
+    module: {
+        rules: [{
+            use: {
+                loader: 'babel-loader',
+            },
+        }],
+    },
+
     devServer: {
         static: './dist',
     },
