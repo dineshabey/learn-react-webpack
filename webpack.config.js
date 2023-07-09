@@ -1,15 +1,23 @@
+let mode = 'development';
+
+if (process.env.NODE_ENV === 'production') {
+    mode = 'production';
+}
+
+
 module.exports = {
-    mode: 'production',  //development
+    mode,
 
     module: {
         rules: [{
+            
             use: {
                 loader: 'babel-loader',
             },
         }],
     },
 
-    devtool:'source-map',
+    devtool: 'source-map',
     devServer: {
         static: './dist',
     },
