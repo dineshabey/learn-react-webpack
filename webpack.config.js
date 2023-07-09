@@ -1,20 +1,29 @@
+const MiniCssEtractPlugin = require("mini-css-extract-plugin");
+let mode = "development";
 
-let mode = 'development';
-if (process.env.NODE_ENV === 'production') {
-    mode = 'production';
+if (process.env.NODE_ENV === "production") {
+  mode = "production";
 }
 module.exports = {
-    mode,
-    module: {
-        rules: [{
+  mode, //env change - prod or dev,QA ,etc..
+  plugins: [new MiniCssEtractPlugin()], //add plugin
+  module: {
+    rules: [
+      {
+        use: {
+          loader: 'babel-loader',
+        },
+      },
 
-            use: {
-                loader: 'babel-loader',
-            },
-        }],
-    },
-    devtool: 'source-map',
-    devServer: {
-        static: './dist',
-    },
+      {
+        test:/\.css$/i, //get all css files
+        use: [MiniCssEtractPlugin.loader, 'css-loader'],
+      },
+    ],
+  },
+  devtool: "source-map", //currect error path visibale
+  devServer: {
+    static: "./dist",
+    hot: true, //stop page reload
+  },
 };

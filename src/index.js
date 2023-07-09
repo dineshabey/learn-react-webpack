@@ -1,9 +1,8 @@
+import './main.css';
 import { toggleButton, descriptionP } from './dom-loder';
-
 
 toggleButton.onclick = changeVisibility;
 let isVisibale = false;
-
 
 toggleDescription();
 function changeVisibility() {
@@ -35,10 +34,21 @@ function changeButtontext() {
 
 }
 
-let myP = <p>This is pargraphe</p>;
+
+
+let myP = <p>This My paragraphe</p>;
+
+
+//stop page reload ------------------------------
+if (module.hot) {
+    module.hot.accept();
+}
 
 const appDiv = document.querySelector('#app');
 const root = ReactDOM.createRoot(appDiv);
 root.render(myP);
 
+
+
 console.log('Hi there');
+
